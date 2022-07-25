@@ -3,7 +3,7 @@
     <button @click="sendEmail">Email</button>
     <div>
       <a v-if="userInfo" :href="`/.auth/logout`">Logout</a>
-      <a v-if="!userInfo" :href="`/.auth/login/aad`">Login</a>
+      <a v-if="!userInfo" :href="`/.auth/login/aad`"><button>Login</button></a>
       <div class="user" v-if="userInfo">
         <p>Welcome</p>
         <p>{{ userInfo.userDetails }}</p>
@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     sendEmail() {
-      console.log(this.userInfo.userDetails)
+      console.log(this.userInfo.userDetails);
       var content = this.items.reduce(function (a, b) {
         return a + '<tr><td>' + b.id + '</a></td><td>' + b.name + '</td></tr>';
       }, '');
