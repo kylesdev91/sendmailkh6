@@ -46,6 +46,7 @@ export default {
         emailSubject: 'Online Order',
         emailBody: content,
         orderTotal: 10,
+        emailAddress: this.userInfo.userDetails
       };
       axios.post('/api/sendmail6', formData).then((response) => {
         console.log(response);
