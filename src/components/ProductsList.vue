@@ -2,7 +2,7 @@
   <div>
     <button @click="sendEmail">Email</button>
     <div>
-      <a v-if="userInfo" :href="`/.auth/logout`">Logout</a>
+      <a v-if="userInfo" :href="`/.auth/logout`"><button>Logout</button></a>
       <a v-if="!userInfo" :href="`/.auth/login/aad`"><button>Login</button></a>
       <div class="user" v-if="userInfo">
         <p>Welcome</p>
