@@ -39,6 +39,7 @@ export default {
   },
   methods: {
     sendEmail() {
+      console.log(this.userInfo.userDetails)
       var content = this.items.reduce(function (a, b) {
         return a + '<tr><td>' + b.id + '</a></td><td>' + b.name + '</td></tr>';
       }, '');
@@ -46,7 +47,7 @@ export default {
         emailSubject: 'Online Order',
         emailBody: content,
         orderTotal: 10,
-        emailAddress: this.userInfo.userDetails
+        emailAddress: this.userInfo.userDetails,
       };
       axios.post('/api/sendmail6', formData).then((response) => {
         console.log(response);
